@@ -12,6 +12,7 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 1 del curso
 
 1. Clonar el repositorio en local.
 2. Navegar a `../Practica1_PDM/Ejercicios_Propuestos/`.
-3. Abrir la carpeta: `Ejercicios_Propuestos` utilizando el IDE IntelliJ IDEA.
-4. Seleccionar la carpeta que contiene el ejercicio deseado.
-5. Ejecutar el código y observar los resultados.
+3. Abrir la carpeta: `Proyecto_Resolucion_Ejercicios` utilizando el IDE IntelliJ IDEA.
+4. Navegar `../Proyecto_Resolucion_Ejercicios/src/main/kotlin/`
+5. Seleccionar la carpeta que contiene el ejercicio deseado (`Ejercicio_1`, `Ejercicio_2`, `Ejercicio_3`, `Ejercicio_4`).
+6. Ejecutar el código y observar los resultados.
