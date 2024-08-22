@@ -39,9 +39,9 @@ fun leerNumero(): Int{
     }
 }
 
-fun main(){
-    var cantidadIntentos = 5
-    val numeroAleatorio = Random.nextInt(1,31)
+fun gestionPartida(cantidad: Int, numeroAleatorio: Int){
+    var cantidadIntentos = cantidad
+
     while (cantidadIntentos != 0){
         print("\rIntentos: $cantidadIntentos\n")
         print("\rAdiva un numero: ")
@@ -60,4 +60,13 @@ fun main(){
         println("\rPista: ${pista}")
         cantidadIntentos--
     }
+}
+
+fun main(){
+    val separador = "\n*********************************************"
+    do{
+        println(separador)
+        gestionPartida(5, Random.nextInt(1,31))
+        println(separador)
+    } while (true)
 }
