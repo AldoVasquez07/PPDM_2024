@@ -49,19 +49,15 @@ fun leerElemento(): Int{
     }
 }
 
-fun main() {
-    var opcionJugador = leerElemento()
+fun mostrarResultadoPartida(elementoJugador: String, elementoComputadora: String){
 
-    //Asignando Elemento al Jugador
-    var elementoJugador = generarElemento(opcionJugador)
+    // Creando una variable separador de tipo constante
+    val separador = "\n" +
+            "*******************************************************************************"
 
-    //Asignando Elemento a la Computadora
-    var elementoComputadora = generarElemento(Random.nextInt(1,4))
-
-    println("\n*******************************************************************************")
+    println(separador)
 
     println("\n/ Jugador: $elementoJugador /-- VS --/ Computadora: $elementoComputadora /")
-
     val resultado = if (elementoJugador == elementoComputadora) {
         "Empate"
     } else if ((elementoJugador == "Piedra" && elementoComputadora == "Tijera") ||
@@ -74,5 +70,21 @@ fun main() {
 
     println("\nResultado: $resultado")
 
-    println("\n*******************************************************************************")
+    println(separador)
+}
+
+fun main() {
+    do {
+        var opcionJugador = leerElemento()
+
+        //Asignando Elemento al Jugador
+        var elementoJugador = generarElemento(opcionJugador)
+
+        //Asignando Elemento a la Computadora mediante un numero Aleatorio de 1 a 3
+        var elementoComputadora = generarElemento(Random.nextInt(1, 4))
+
+        //Mostrando los Resultados de la partida
+        mostrarResultadoPartida(elementoJugador, elementoComputadora)
+
+    } while(true)
 }
