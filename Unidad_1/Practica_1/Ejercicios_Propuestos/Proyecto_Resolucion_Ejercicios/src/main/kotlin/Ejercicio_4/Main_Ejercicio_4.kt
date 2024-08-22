@@ -39,43 +39,56 @@ fun leerNumero(): Int{
 }
 
 fun gestionPartida(cantidad: Int, numeroAleatorio: Int){
+    // Reasignando variable para hacer el decremento de intentos
     var cantidadIntentos = cantidad
 
+    // Repitiendo por la cantidad de intentos
     while (cantidadIntentos != 0){
         println("\n----------------------------------")
         print("Intentos: $cantidadIntentos\n")
         print("Adiva un numero: ")
         var numero = leerNumero()
         var pista: String? = ""
+        // Preguntando por el tamaño del numero
         if (numero > numeroAleatorio){
+            // Caso de que sea menor al ingresado
             pista = "- El numero es menor -"
         }
         else if (numero < numeroAleatorio){
+            // Caso de que sea mayor al ingresado
             pista = "- El numero es mayor -"
         }
         else {
+            // Caso de que acertar el numero
             print("=== ¡GANASTE! El numero es: $numero ===\n")
             return
         }
-
+        // Imprimiendo el caso como pista
         println("Pista: ${pista}")
         cantidadIntentos--
     }
 }
 
 fun continuarPartida(): Boolean{
+    // Lista con los dos valores posibles
     val lista = listOf("Y", "n")
+
     while (true) {
+        //recibiendo respuesta
         print("¿Desea Continuar? (Y/n): ")
         var opc = readln()
+        // consultado si la opcion selecionada está en la lista
         if(opc in lista) {
             if (opc == lista[0]){
+                // caso de Y
                 return true
             }
             else{
+                // caso de n
                 return false
             }
         } else {
+            //Caso de que la opcion no esté en la lista
             println("--Debe Ingresar una Opcion Valida--")
         }
     }
@@ -83,6 +96,7 @@ fun continuarPartida(): Boolean{
 
 fun main(){
     val separador = "\n*********************************************"
+    // Bucle para poder jugar más veces
     do{
         println(separador)
         gestionPartida(5, Random.nextInt(1,31))

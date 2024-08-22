@@ -74,19 +74,25 @@ fun mostrarResultadoPartida(elementoJugador: String, elementoComputadora: String
 }
 
 fun continuarPartida(): Boolean{
+    // Lista con los dos valores posibles
     val lista = listOf("Y", "n")
     while (true) {
+        //recibiendo respuesta
         print("¿Desea Continuar? (Y/n): ")
         var opc = readln()
+        // consultado si la opcion selecionada está en la lista
         if(opc in lista) {
             if (opc == lista[0]){
+                // caso de Y
                 return true
             }
             else{
+                // caso de n
                 return false
             }
         } else {
-            println("Debe Ingresar una Opcion Valida")
+            //Caso de que la opcion no esté en la lista
+            println("--Debe Ingresar una Opcion Valida--")
         }
     }
 }
