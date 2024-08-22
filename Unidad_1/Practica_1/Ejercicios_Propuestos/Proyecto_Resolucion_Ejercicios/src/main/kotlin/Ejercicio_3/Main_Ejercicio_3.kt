@@ -33,15 +33,50 @@ fun obtenerOpcionCalculadora(): Int{
     }
 }
 
+fun leerValores(valor: String): Double{
+    var valorOperacion: Double?
+    while(true) {
+        try {
+            valorOperacion = valor.toDouble()
+            if (valorOperacion != null) {
+                return valorOperacion
+            } else {
+                println("Debe ingresar un valor")
+            }
+        } catch (e: NumberFormatException) {
+            println("Ingrese un valor numerico")
+        }
+    }
+}
+
 fun main(){
     var opcion = obtenerOpcionCalculadora()
 
-    if (opcion == 5){
+    if (opcion == 5) {
         return
     }
+    print("\nValor: ")
+    var valor1 = leerValores(readln())
+    var valor2: Double
 
-    var valor1 = readln().toDouble()
-    var valor2 = readln().toDouble()
+    if (opcion != 4){
+        print("\nValor: ")
+        valor2 = leerValores(readln())
+    }
+    else {
+        while(true){
+            print("\nValor: ")
+            valor2 = leerValores(readln())
+            if (valor2 == 0.0){
+                println("No se puede dividir entre 0")
+                println("Ingrese nuevamente un valor")
+            }
+            else{
+                break
+            }
+        }
+    }
+
 
     var resultado = when(opcion){
         1 -> valor1 + valor2
@@ -51,5 +86,5 @@ fun main(){
         else -> 0
     }
 
-    println("Resultado: $resultado")
+    println("\nResultado: $resultado")
 }
