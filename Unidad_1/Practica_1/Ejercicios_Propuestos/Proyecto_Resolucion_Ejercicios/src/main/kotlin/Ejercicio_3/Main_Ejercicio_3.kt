@@ -20,11 +20,11 @@ fun obtenerOpcionCalculadora(): Int{
                     return opcionCalculadora
                 }
                 else{
-                    println("Ingrese una opcion pertinente")
+                    println("--Ingrese una opcion pertinente--")
                 }
             }
             else{
-                println("Debe ingresar una opcion")
+                println("--Debe ingresar una opcion--")
             }
         }
         catch (e: NumberFormatException){
@@ -41,10 +41,10 @@ fun leerValores(valor: String): Double{
             if (valorOperacion != null) {
                 return valorOperacion
             } else {
-                println("Debe ingresar un valor")
+                println("--Debe ingresar un valor--")
             }
         } catch (e: NumberFormatException) {
-            println("Ingrese un valor numerico")
+            println("--Ingrese un valor numerico--")
         }
     }
 }
@@ -73,15 +73,15 @@ fun main() {
         var valor2: Double
 
         if (opcion != 4) {
-            print("\nValor: ")
+            print("Valor: ")
             valor2 = leerValores(readln())
         } else {
             while (true) {
-                print("\nValor: ")
+                print("Valor: ")
                 valor2 = leerValores(readln())
                 if (valor2 == 0.0) {
-                    println("No se puede dividir entre 0")
-                    println("Ingrese nuevamente un valor")
+                    println("--No se puede dividir entre 0--")
+                    println("--Ingrese nuevamente un valor--")
                 } else {
                     break
                 }
