@@ -53,7 +53,7 @@ fun mostrarResultadoPartida(elementoJugador: String, elementoComputadora: String
 
     // Creando una variable separador de tipo constante
     val separador = "\n" +
-            "*******************************************************************************"
+            "****************************************************************"
 
     println(separador)
 
@@ -73,8 +73,31 @@ fun mostrarResultadoPartida(elementoJugador: String, elementoComputadora: String
     println(separador)
 }
 
+fun continuarPartida(): Boolean{
+    val lista = listOf("Y", "n")
+    while (true) {
+        print("¿Desea Continuar? (Y/n): ")
+        var opc = readln()
+        if(opc in lista) {
+            if (opc == lista[0]){
+                return true
+            }
+            else{
+                return false
+            }
+        } else {
+            println("Debe Ingresar una Opcion Valida")
+        }
+    }
+}
+
 fun main() {
+    val separador = "\n" +
+            "///////////////////////////////////////////////////\n"
+
     do {
+        println(separador)
+
         var opcionJugador = leerElemento()
 
         //Asignando Elemento al Jugador
@@ -86,5 +109,6 @@ fun main() {
         //Mostrando los Resultados de la partida
         mostrarResultadoPartida(elementoJugador, elementoComputadora)
 
-    } while(true)
+        println(separador)
+    } while(continuarPartida())
 }
