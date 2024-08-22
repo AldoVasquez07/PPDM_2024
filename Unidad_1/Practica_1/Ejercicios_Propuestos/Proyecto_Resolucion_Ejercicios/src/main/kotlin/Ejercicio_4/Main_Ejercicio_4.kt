@@ -8,7 +8,6 @@ fun leerNumero(): Int{
 
     while(true){
         //Leemos la puntuacion de manera explicita
-        print("Ingrese su Puntuacion: ")
         var numero = readln()
 
         // Generacion de try-catch en caso de una mala conversion
@@ -43,22 +42,42 @@ fun gestionPartida(cantidad: Int, numeroAleatorio: Int){
     var cantidadIntentos = cantidad
 
     while (cantidadIntentos != 0){
-        print("\rIntentos: $cantidadIntentos\n")
-        print("\rAdiva un numero: ")
+        println("\n----------------------------------")
+        print("Intentos: $cantidadIntentos\n")
+        print("Adiva un numero: ")
         var numero = leerNumero()
         var pista: String? = ""
         if (numero > numeroAleatorio){
-            pista = "El numero es menor"
+            pista = "- El numero es menor -"
         }
         else if (numero < numeroAleatorio){
-            pista = "El numero es mayor"
+            pista = "- El numero es mayor -"
         }
         else {
-            print("\r¡GANASTE! El numero es: $numero")
+            print("=== ¡GANASTE! El numero es: $numero ===\n")
+            return
         }
 
-        println("\rPista: ${pista}")
+        println("Pista: ${pista}")
         cantidadIntentos--
+    }
+}
+
+fun continuarPartida(): Boolean{
+    val lista = listOf("Y", "n")
+    while (true) {
+        print("¿Desea Continuar? (Y/n): ")
+        var opc = readln()
+        if(opc in lista) {
+            if (opc == lista[0]){
+                return true
+            }
+            else{
+                return false
+            }
+        } else {
+            println("--Debe Ingresar una Opcion Valida--")
+        }
     }
 }
 
@@ -68,5 +87,5 @@ fun main(){
         println(separador)
         gestionPartida(5, Random.nextInt(1,31))
         println(separador)
-    } while (true)
+    } while (continuarPartida())
 }
