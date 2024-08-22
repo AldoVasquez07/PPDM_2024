@@ -58,11 +58,12 @@ fun obtenerResultado(opcion: Int, valor1: Double, valor2: Double){
         else -> 0
     }
 
-    println("\nResultado: $resultado")
+    println("\n____ Resultado: $resultado ____\n")
 }
 
 fun main() {
     while (true) {
+        println("*************************************")
         var opcion = obtenerOpcionCalculadora()
 
         if (opcion == 5) {
