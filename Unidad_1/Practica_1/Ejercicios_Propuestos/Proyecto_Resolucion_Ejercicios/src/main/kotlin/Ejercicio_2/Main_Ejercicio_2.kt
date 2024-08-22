@@ -13,13 +13,44 @@ fun generarElemento(num: Int): String{
     return elemento
 }
 
+fun leerElemento(): Int{
+    // Variable que permite Null
+    var opcionJugador: Int?
+
+    while(true) {
+        // Creando Menú de Elementos
+        println("=== Elija un elemento ===")
+        println("1. Piedra")
+        println("2. Papel")
+        println("3. Tijera")
+        print("\nSu opcion: ")
+
+        var opcion = readln()
+
+        // Implementando try-catch para las excepciones
+        try {
+            // Realizando conversion a Entero
+            opcionJugador = opcion.toInt()
+            if (opcionJugador != null) {
+                if (opcionJugador in 1..3) {
+                    return opcionJugador
+                } else {
+                    // Prohibiendo Valores fuera del rango
+                    println("--Debe Ingresar una Opcion Valida--")
+                }
+            } else {
+                // Prohibiendo nulos
+                println("--Debe Ingresar una Opcion--")
+            }
+        } catch (e: NumberFormatException) {
+            // Prohibiendo valores no enteros
+            println("--Ingrese una Opcion Pertinente--")
+        }
+    }
+}
+
 fun main() {
-    println("Elija un elemento")
-    println("1. Piedra")
-    println("2. Papel")
-    println("3. Tijera")
-    print("\nSu opcion: ")
-    var opcionJugador = readln().toInt()
+    var opcionJugador = leerElemento()
 
     //Asignando Elemento al Jugador
     var elementoJugador = generarElemento(opcionJugador)
