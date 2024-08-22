@@ -49,36 +49,8 @@ fun leerValores(valor: String): Double{
     }
 }
 
-fun main(){
-    var opcion = obtenerOpcionCalculadora()
-
-    if (opcion == 5) {
-        return
-    }
-    print("\nValor: ")
-    var valor1 = leerValores(readln())
-    var valor2: Double
-
-    if (opcion != 4){
-        print("\nValor: ")
-        valor2 = leerValores(readln())
-    }
-    else {
-        while(true){
-            print("\nValor: ")
-            valor2 = leerValores(readln())
-            if (valor2 == 0.0){
-                println("No se puede dividir entre 0")
-                println("Ingrese nuevamente un valor")
-            }
-            else{
-                break
-            }
-        }
-    }
-
-
-    var resultado = when(opcion){
+fun obtenerResultado(opcion: Int, valor1: Double, valor2: Double){
+    var resultado = when (opcion) {
         1 -> valor1 + valor2
         2 -> valor1 - valor2
         3 -> valor1 * valor2
@@ -87,4 +59,34 @@ fun main(){
     }
 
     println("\nResultado: $resultado")
+}
+
+fun main() {
+    while (true) {
+        var opcion = obtenerOpcionCalculadora()
+
+        if (opcion == 5) {
+            return
+        }
+        print("\nValor: ")
+        var valor1 = leerValores(readln())
+        var valor2: Double
+
+        if (opcion != 4) {
+            print("\nValor: ")
+            valor2 = leerValores(readln())
+        } else {
+            while (true) {
+                print("\nValor: ")
+                valor2 = leerValores(readln())
+                if (valor2 == 0.0) {
+                    println("No se puede dividir entre 0")
+                    println("Ingrese nuevamente un valor")
+                } else {
+                    break
+                }
+            }
+        }
+        obtenerResultado(opcion, valor1, valor2)
+    }
 }
