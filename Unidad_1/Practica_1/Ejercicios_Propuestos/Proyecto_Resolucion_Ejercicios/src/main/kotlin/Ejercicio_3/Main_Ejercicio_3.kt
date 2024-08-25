@@ -9,7 +9,8 @@ fun obtenerOpcionCalculadora(): Int{
         println("2. Resta")
         println("3. Multiplicacion")
         println("4. Division")
-        println("5. Salir")
+        println("5. Limpiar Acumulado")
+        println("6. Salir")
 
         // Solicitando opcion a escoger
         print("\nSu opcion: ")
@@ -19,7 +20,7 @@ fun obtenerOpcionCalculadora(): Int{
         try{
             opcionCalculadora = opcion.toInt()
             if (opcionCalculadora != null) {
-                if (opcionCalculadora in 1..5){
+                if (opcionCalculadora in 1..6){
                     return opcionCalculadora
                 }
                 else{
@@ -58,51 +59,77 @@ fun leerValores(valor: String): Double{
     }
 }
 
-fun obtenerResultado(opcion: Int, valor1: Double, valor2: Double){
+fun obtenerResultado(opcion: Int, valor1: Double, valor2: Double): Double{
     // switch para determinar la acción según la opcion
     var resultado = when (opcion) {
-        1 -> valor1 + valor2
-        2 -> valor1 - valor2
-        3 -> valor1 * valor2
-        4 -> valor1 / valor2
-        else -> 0
+        1 -> "${valor1 + valor2}"
+        2 -> "${valor1 - valor2}"
+        3 -> "${valor1 * valor2}"
+        4 -> "${valor1 / valor2}"
+        else -> "Error!"
     }
     // Retornando el resultado de dicha accion
     println("\n____ Resultado: $resultado ____\n")
+    return resultado.toDouble()
 }
 
+
+fun evitarDivisionPorCero(opcion: Int): Double {
+    var valor2: Double
+
+    if (opcion != 4) {
+        print("Valor: ")
+        valor2 = leerValores(readln())
+    } else {
+        while (true) {
+            print("Valor: ")
+            valor2 = leerValores(readln())
+            if (valor2 == 0.0) {
+                println("--No se puede dividir entre 0--")
+                println("--Ingrese nuevamente un valor--")
+            } else {
+                break
+            }
+        }
+    }
+    return valor2
+}
+
+
 fun main() {
+    var valor1: Double
+    var acumulador: Double = 0.0
+    var contador: Int = 0
     while (true) {
         println("*************************************")
+        println("Acumulador: $acumulador")
         // Mostrando Menú y obteniendo la opcion
         var opcion = obtenerOpcionCalculadora()
 
         // Finalizacion codigo si la opcion es 5
-        if (opcion == 5) {
+        if (opcion == 6) {
             return
         }
-        // Preguntando por los valores
-        print("\nValor: ")
-        var valor1 = leerValores(readln())
-        var valor2: Double
 
-        // Condicional para evitar la division entre 0
-        if (opcion != 4) {
-            print("Valor: ")
-            valor2 = leerValores(readln())
-        } else {
-            while (true) {
-                print("Valor: ")
-                valor2 = leerValores(readln())
-                if (valor2 == 0.0) {
-                    println("--No se puede dividir entre 0--")
-                    println("--Ingrese nuevamente un valor--")
-                } else {
-                    break
-                }
-            }
+        if (opcion == 5) {
+            acumulador = 0.0
+            contador = 0
         }
-        // Mostrando el resultado
-        obtenerResultado(opcion, valor1, valor2)
+        else {
+            // Preguntando por los valores
+
+            if (contador == 0) {
+                print("\nValor: ")
+                valor1 = leerValores(readln())
+            }
+            else{
+                valor1 = acumulador
+            }
+            var valor2 = evitarDivisionPorCero(opcion)
+
+            // Mostrando el resultado
+            acumulador = obtenerResultado(opcion, valor1, valor2)
+        }
+        contador++
     }
 }
