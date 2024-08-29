@@ -14,13 +14,27 @@ fun leerOpcion(): Int{
     }
 }
 
-fun main() {
+fun mostrarMenu(): Int{
+    // Declarando separadores estaticos
+    val separador1 =  "//////////////////////////////////////////////////"
+    val separador2 = "*****************************"
+    // Imprimiendo Menú
+    println(separador1)
+    println(separador2)
     println("*** ¡Bienvenido al Banco! ***")
+    println("$separador2\n")
     println("<< Ingrese una opción >>")
     println("1. Crear Cuenta")
     println("2. Retirar")
     println("3. Recargar")
     println("4. Salir")
 
-    val opcion = leerOpcion()
+    return leerOpcion()
+}
+
+
+fun main() {
+    val opcion = mostrarMenu()
+
+
 }
