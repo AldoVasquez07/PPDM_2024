@@ -11,12 +11,17 @@ fun generarMenu(){
 }
 
 fun main(){
+    var utils = Utils()
     while(true){
+        // Mostrando Menu
         generarMenu()
-        val opcion = readln().toInt()
+        // Solicitando opcion
+        val opcion = utils.conversionEntero("\nSu opcion: ", 0,5)
 
         if (opcion == 5){
+            // Caso de selecionar la opcion de salir
             return
         }
+
     }
 }
