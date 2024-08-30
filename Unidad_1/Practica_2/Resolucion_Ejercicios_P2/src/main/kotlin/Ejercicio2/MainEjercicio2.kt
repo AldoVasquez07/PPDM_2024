@@ -37,6 +37,37 @@ fun generarProducto(lista: MutableList<Producto>, utils: Utils) {
     lista.add(producto)
 }
 
+fun editarProducto(lista: MutableList<Producto>, index: Int, utils: Utils) {
+    if (index < 0 || index >= lista.size) {
+        println("Índice fuera de rango.")
+        return
+    }
+
+    val producto = lista[index]
+
+    println("*** Editando Producto ***")
+    println("Producto actual: Nombre = ${producto.getNombre()}, Precio = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%")
+
+    print("Nuevo nombre (dejar en blanco para no cambiar): ")
+    val nuevoNombre = readln().takeIf { it.isNotBlank() }
+    if (nuevoNombre != null) {
+        producto.setNombre(nuevoNombre)
+    }
+
+    val nuevoPrecio = utils.conversionDecimal("Nuevo precio (dejar en blanco para no cambiar): ", 0.0, 10000.0)
+    if (nuevoPrecio != null) {
+        producto.setPrecio(nuevoPrecio)
+    }
+
+    val nuevoDescuento = utils.conversionDecimal("Nuevo descuento (dejar en blanco para no cambiar): ", 0.0, 100.0)
+    if (nuevoDescuento != null) {
+        producto.setDescuento(nuevoDescuento)
+    }
+
+    println("Producto editado: Nombre = ${producto.getNombre()}, Precio = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%")
+}
+
+
 
 fun main(){
     // Declarando Separador
