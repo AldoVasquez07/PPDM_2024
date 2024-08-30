@@ -37,7 +37,7 @@ fun identificarOpcion(cuenta: CuentaBancaria, utils: Utils, opcion: Int){
     when (opcion){
         1 -> cuenta.crearCuentaBancaria()
         2 -> cuenta.retiro(utils.conversionNumero("-> Ingrese la cantidad a Retirar: "))
-        3 -> print("")
+        3 -> cuenta.recargarSaldo(utils.conversionNumero("-> Ingrese el saldo a Recargar: "))
     }
 }
 

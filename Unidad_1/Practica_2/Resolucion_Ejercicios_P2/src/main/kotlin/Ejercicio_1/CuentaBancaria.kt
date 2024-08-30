@@ -1,4 +1,5 @@
 package Ejercicio_1
+import java.awt.geom.Arc2D
 import java.time.LocalDateTime
 
 class CuentaBancaria {
@@ -59,5 +60,10 @@ class CuentaBancaria {
         else{
             println("--Ya excedió el límite de su tarjeta--")
         }
+    }
+
+    fun recargarSaldo(cantidad: Double){
+        this.saldo += cantidad
+        println("Monto: $cantidad Ingresado con exito")
     }
 }
