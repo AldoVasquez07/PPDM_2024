@@ -37,5 +37,3 @@ class Producto {
         return this.precio * (1 - this.descuento / 100)
     }
 }
-
-}
