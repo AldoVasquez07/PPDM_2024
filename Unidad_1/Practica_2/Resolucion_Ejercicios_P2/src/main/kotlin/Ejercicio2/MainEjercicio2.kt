@@ -10,10 +10,10 @@ fun generarMenu(){
     println("5. Salir")
 }
 
-fun listarProductos(lista: MutableList<Producto>){
-    println("*** Listando Productos ***")
+fun listarProductos(lista: MutableList<Producto>, mensaje: String){
+    println(mensaje)
     lista.forEachIndexed { index, producto ->
-        println("Producto ${index + 1}: Precio original = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
+        println("${index + 1}) Producto ${producto.getNombre()}: Precio original = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
     }
 }
 
@@ -38,9 +38,7 @@ fun generarProducto(lista: MutableList<Producto>, utils: Utils) {
 }
 
 fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
-    println("*** Editar Producto ***")
-
-    listarProductos(lista)
+    listarProductos(lista,"*** Editar Producto ***")
     val opcion = utils.conversionEntero("Editar Producto: ", 0, lista.size - 1)
 
     println("Producto ${lista[opcion].getNombre()}")
@@ -53,8 +51,7 @@ fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
 }
 
 fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
-    println("*** Eliminar Producto ***")
-    listarProductos(lista)
+    listarProductos(lista, "*** Eliminar Producto ***")
     val opcion = utils.conversionEntero("Eliminar Producto: ", 0, lista.size - 1)
 
     val productoEliminado = lista.removeAt(opcion)
@@ -63,7 +60,7 @@ fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
 
 fun definirAccion(opcion: Int, lista: MutableList<Producto>, utils: Utils){
     when(opcion){
-        1 -> listarProductos(lista)
+        1 -> listarProductos(lista, "*** Listar Productos ***")
         2 -> generarProducto(lista, utils)
         3 -> editarProducto(lista, utils)
         4 -> eliminarProductoPorIndice(lista, utils)
