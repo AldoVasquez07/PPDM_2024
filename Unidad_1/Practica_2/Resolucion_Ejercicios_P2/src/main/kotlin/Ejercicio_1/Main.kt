@@ -32,20 +32,26 @@ fun mostrarMenu(): Int{
     return leerOpcion()
 }
 
-fun identificarOpcion(opcion: Int){
-    var cuenta = CuentaBancaria()
+fun identificarOpcion(cuenta: CuentaBancaria, utils: Utils, opcion: Int){
 
-
+    when (opcion){
+        1 -> print("")
+        2 -> print("")
+        3 -> print("")
+    }
 }
 
 fun main() {
+    var cuenta = CuentaBancaria()
+    var utils =  Utils()
+
     while (true) {
         val opcion = mostrarMenu()
 
-        if (opcion == 5) {
+        if (opcion == 4) {
             return
         }
 
-        identificarOpcion(opcion)
+        identificarOpcion(cuenta, utils, opcion)
     }
 }
