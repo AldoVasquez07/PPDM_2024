@@ -11,6 +11,13 @@ class CuentaBancaria {
     var fechaCreacion: String = ""
     var estado: Boolean = true
 
+    fun setSaldo(saldo: Double){
+        this.saldo = saldo
+    }
+
+    fun getSaldo(): Double{
+        return this.saldo
+    }
 
     fun crearCuentaBancaria(){
         if (this.estado) {
@@ -19,7 +26,7 @@ class CuentaBancaria {
             this.numero = utils.determinarLongitudCadena("Numero de cuenta: ", 10)
             print("Contraseña: ")
             this.contrasena = readln()
-            this.saldo = utils.conversionNumero("Saldo: ")
+            setSaldo(utils.conversionNumero("Saldo: "))
             this.limite = utils.conversionNumero("Limite: ")
             this.fechaCreacion = LocalDateTime.now().toString()
             this.estado = false
