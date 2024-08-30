@@ -12,6 +12,7 @@ fun generarMenu(){
 
 fun listarProductos(lista: MutableList<Producto>, mensaje: String){
     println(mensaje)
+    // Haciendo un for-each para listar los productos de la lista
     lista.forEachIndexed { index, producto ->
         println("${index + 1}) Producto ${producto.getNombre()}: Precio original = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
     }
@@ -38,9 +39,11 @@ fun generarProducto(lista: MutableList<Producto>, utils: Utils) {
 }
 
 fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
+    // Listando los productos
     listarProductos(lista,"*** Editar Producto ***")
+    // Leyendo la opcion a editar
     val opcion = utils.conversionEntero("Editar Producto: ", 0, lista.size - 1)
-
+    // Editando producto
     println("Producto ${lista[opcion].getNombre()}")
     print("Nombre: ")
     lista[opcion].setNombre(readln())
@@ -51,14 +54,17 @@ fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
 }
 
 fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
+    // Listar los productos
     listarProductos(lista, "*** Eliminar Producto ***")
+    // Recibiendo opcion a eliminar
     val opcion = utils.conversionEntero("Eliminar Producto: ", 0, lista.size - 1)
-
+    // Eliminando Producto
     val productoEliminado = lista.removeAt(opcion)
     println("<< Producto eliminado >>")
 }
 
 fun definirAccion(opcion: Int, lista: MutableList<Producto>, utils: Utils){
+    // Generando identificador para determinar la accion
     when(opcion){
         1 -> listarProductos(lista, "*** Listar Productos ***")
         2 -> generarProducto(lista, utils)
