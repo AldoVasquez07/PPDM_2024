@@ -1,4 +1,5 @@
 package Ejercicio_1
+import java.time.LocalDateTime
 
 class CuentaBancaria {
     var numero: String = ""
@@ -7,6 +8,7 @@ class CuentaBancaria {
     var limite: Double = 0.0
     var montoRetirado: Double = 0.0
     var fechaCreacion: String = ""
+    var estado: Boolean = false
 
     fun numeroSet(numero: String){
         this.numero = numero
@@ -30,6 +32,22 @@ class CuentaBancaria {
 
     fun saldoGet(): Double{
         return this.saldo
+    }
+
+    fun crearCuentaBancaria(){
+        if (!this.estado) {
+            var utils = Utils()
+            println("Creación de Cuenta: ")
+            this.numero = utils.determinarLongitudCadena("Numero de cuenta: ", 10)
+            print("Contraseña: ")
+            this.contrasena = readln()
+            this.saldo = utils.conversionNumero("Saldo: ")
+            this.limite = utils.conversionNumero("Limite: ")
+            this.fechaCreacion = LocalDateTime.now().toString()
+        }
+        else{
+            println("-- Usted ya tiene una cuenta --")
+        }
     }
 
     fun retiro(cantidad: Double){

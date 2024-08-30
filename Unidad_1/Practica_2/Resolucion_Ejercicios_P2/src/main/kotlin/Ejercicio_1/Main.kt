@@ -35,8 +35,8 @@ fun mostrarMenu(): Int{
 fun identificarOpcion(cuenta: CuentaBancaria, utils: Utils, opcion: Int){
 
     when (opcion){
-        1 -> print("")
-        2 -> print("")
+        1 -> cuenta.crearCuentaBancaria()
+        2 -> cuenta.retiro(utils.conversionNumero("-> Ingrese la cantidad a Retirar: "))
         3 -> print("")
     }
 }

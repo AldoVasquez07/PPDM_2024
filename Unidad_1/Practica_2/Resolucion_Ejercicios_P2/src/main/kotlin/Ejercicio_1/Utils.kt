@@ -31,4 +31,20 @@ class Utils {
         }
     }
 
+    fun determinarLongitudCadena(mensaje: String, longitud: Int): String{
+        while (true) {
+            // Imprimiendo mensaje pasado por parametro
+            print(mensaje)
+            // Leyendo cadena establecida
+            var cadena = readln()
+
+            if (cadena.length == longitud) {
+                // Retornando cadena con longitud especifica
+                return cadena
+            } else {
+                // Imprimiendo caso de ingresar una cadena con mayor o menor longitud
+                println("-- Se deben ingresar $longitud caracteres --")
+            }
+        }
+    }
 }
