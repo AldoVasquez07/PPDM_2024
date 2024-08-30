@@ -10,9 +10,22 @@ fun generarMenu(){
     println("5. Salir")
 }
 
+fun listarProductos(lista: MutableList<Producto>){
+    lista.forEachIndexed { index, producto ->
+        println("Producto ${index + 1}: Precio original = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
+    }
+}
+
 fun main(){
-    var utils = Utils()
+    // Declarando Separador
+    val separador = "************************************"
+    // Instanciando la clase utils
+    val utils = Utils()
+    // Creando una Lista de Productos
+    val listaProductos = mutableListOf<Producto>()
+
     while(true){
+        println(separador)
         // Mostrando Menu
         generarMenu()
         // Solicitando opcion
@@ -22,6 +35,6 @@ fun main(){
             // Caso de selecionar la opcion de salir
             return
         }
-
+        println(separador)
     }
 }
