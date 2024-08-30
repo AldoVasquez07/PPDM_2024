@@ -37,34 +37,28 @@ fun generarProducto(lista: MutableList<Producto>, utils: Utils) {
     lista.add(producto)
 }
 
-fun editarProducto(lista: MutableList<Producto>, index: Int, utils: Utils) {
-    if (index < 0 || index >= lista.size) {
-        println("Índice fuera de rango.")
-        return
-    }
+fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
+    println("*** Editar Producto ***")
 
-    val producto = lista[index]
+    listarProductos(lista)
+    val opcion = utils.conversionEntero("Editar Producto: ", 0, lista.size - 1)
 
-    println("*** Editando Producto ***")
-    println("Producto actual: Nombre = ${producto.getNombre()}, Precio = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%")
+    println("Producto ${lista[opcion].getNombre()}")
+    print("Nombre: ")
+    lista[opcion].setNombre(readln())
+    lista[opcion].setPrecio(utils.conversionDecimal("Precio: ", 0.0, 10000.0))
+    lista[opcion].setDescuento(utils.conversionDecimal("Descuento: ", 0.0, 100.0))
 
-    print("Nuevo nombre (dejar en blanco para no cambiar): ")
-    val nuevoNombre = readln().takeIf { it.isNotBlank() }
-    if (nuevoNombre != null) {
-        producto.setNombre(nuevoNombre)
-    }
+    println("<< Edicón Completa >>")
+}
 
-    val nuevoPrecio = utils.conversionDecimal("Nuevo precio (dejar en blanco para no cambiar): ", 0.0, 10000.0)
-    if (nuevoPrecio != null) {
-        producto.setPrecio(nuevoPrecio)
-    }
+fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
+    println("*** Eliminar Producto ***")
+    listarProductos(lista)
+    val opcion = utils.conversionEntero("Eliminar Producto: ", 0, lista.size - 1)
 
-    val nuevoDescuento = utils.conversionDecimal("Nuevo descuento (dejar en blanco para no cambiar): ", 0.0, 100.0)
-    if (nuevoDescuento != null) {
-        producto.setDescuento(nuevoDescuento)
-    }
-
-    println("Producto editado: Nombre = ${producto.getNombre()}, Precio = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%")
+    val productoEliminado = lista.removeAt(opcion)
+    println("<< Producto eliminado >>")
 }
 
 
