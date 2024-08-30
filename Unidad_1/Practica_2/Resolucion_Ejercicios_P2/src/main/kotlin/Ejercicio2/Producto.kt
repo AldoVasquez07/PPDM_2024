@@ -1,8 +1,23 @@
 package Ejercicio2
 
 class Producto {
+    private var nombre: String = ""
     private var precio: Double = 0.0
     private var descuento: Double = 0.0
+
+    fun producto(nombre: String, precio: Double, descuento: Double){
+        this.nombre = nombre
+        this.precio = precio
+        this.descuento = descuento
+    }
+
+    fun getNombre(): String{
+        return this.nombre
+    }
+
+    fun setNombre(nombre: String){
+        this.nombre = nombre
+    }
 
     // Agregando metodo Get para el precio
     fun getPrecio(): Double{
