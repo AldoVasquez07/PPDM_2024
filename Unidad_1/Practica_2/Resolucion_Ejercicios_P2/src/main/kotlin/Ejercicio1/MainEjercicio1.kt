@@ -1,4 +1,4 @@
-package Ejercicio_1
+package Ejercicio1
 
 fun leerOpcion(): Int{
     print("\nSu opcion: ")
