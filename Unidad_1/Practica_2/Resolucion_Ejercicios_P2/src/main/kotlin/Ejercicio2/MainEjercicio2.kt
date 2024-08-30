@@ -61,7 +61,14 @@ fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
     println("<< Producto eliminado >>")
 }
 
-
+fun definirAccion(opcion: Int, lista: MutableList<Producto>, utils: Utils){
+    when(opcion){
+        1 -> listarProductos(lista)
+        2 -> generarProducto(lista, utils)
+        3 -> editarProducto(lista, utils)
+        4 -> eliminarProductoPorIndice(lista, utils)
+    }
+}
 
 fun main(){
     // Declarando Separador
@@ -82,6 +89,9 @@ fun main(){
             // Caso de selecionar la opcion de salir
             return
         }
+
+        definirAccion(opcion, listaProductos, utils)
+
         println(separador)
     }
 }
