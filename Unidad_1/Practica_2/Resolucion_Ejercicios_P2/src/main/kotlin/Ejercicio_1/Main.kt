@@ -62,6 +62,6 @@ fun main() {
         }
         // Ejecutando acción establecida
         identificarOpcion(cuenta, utils, opcion)
-        println(separador)
+        println(separador + "\n\n")
     }
 }
