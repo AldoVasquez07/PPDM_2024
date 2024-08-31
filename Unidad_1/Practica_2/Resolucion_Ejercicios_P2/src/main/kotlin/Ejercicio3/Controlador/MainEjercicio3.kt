@@ -1,5 +1,6 @@
 package Ejercicio3.Controlador
 
+
 fun mostrarMenu(){
     println("¡Bienvenido!")
     println("Elija una Opcion")
@@ -18,5 +19,5 @@ fun mostrarSubMenu(figura: String){
 }
 
 fun main(){
-    return
+    mostrarMenu()
 }
