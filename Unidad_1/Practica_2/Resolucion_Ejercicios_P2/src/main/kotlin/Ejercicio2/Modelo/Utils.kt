@@ -1,4 +1,4 @@
-package Ejercicio2
+package Ejercicio2.Modelo
 
 class Utils {
     fun conversionEntero(mensaje: String, limiteInferior: Int, limiteSuperior: Int): Int{

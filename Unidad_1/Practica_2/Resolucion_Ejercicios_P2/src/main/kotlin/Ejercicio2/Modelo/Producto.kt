@@ -1,4 +1,4 @@
-package Ejercicio2
+package Ejercicio2.Modelo
 
 class Producto {
     private var nombre: String = ""

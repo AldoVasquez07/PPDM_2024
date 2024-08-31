@@ -1,4 +1,4 @@
-package Ejercicio3
+package Ejercicio3.Modelo
 
 abstract class Shape {
     abstract var area: Double

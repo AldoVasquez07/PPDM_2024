@@ -1,4 +1,4 @@
-package Ejercicio1
+package Ejercicio1.Modelo
 import java.time.LocalDateTime
 
 class CuentaBancaria {

@@ -1,4 +1,7 @@
-package Ejercicio1
+package Ejercicio1.Controlador
+
+import Ejercicio1.Modelo.CuentaBancaria
+import Ejercicio1.Modelo.Utils
 
 fun leerOpcion(): Int{
     print("\nSu opcion: ")

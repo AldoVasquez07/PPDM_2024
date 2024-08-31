@@ -1,4 +1,4 @@
-package Ejercicio3
+package Ejercicio3.Modelo
 
 class Circulo(private val radio: Double) : Shape() {
     override var area: Double = 0.0

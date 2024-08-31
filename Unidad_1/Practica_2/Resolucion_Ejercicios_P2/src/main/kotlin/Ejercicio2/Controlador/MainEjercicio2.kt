@@ -1,4 +1,7 @@
-package Ejercicio2
+package Ejercicio2.Controlador
+
+import Ejercicio2.Modelo.Producto
+import Ejercicio2.Modelo.Utils
 
 fun generarMenu(){
     // Imprimiendo menú basico

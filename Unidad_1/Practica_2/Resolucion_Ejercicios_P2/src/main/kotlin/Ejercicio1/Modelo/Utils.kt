@@ -1,4 +1,4 @@
-package Ejercicio1
+package Ejercicio1.Modelo
 
 class Utils {
     fun conversionNumero(mensaje: String): Double{
