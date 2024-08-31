@@ -17,7 +17,8 @@ fun listarProductos(lista: MutableList<Producto>, mensaje: String){
     println(mensaje)
     // Haciendo un for-each para listar los productos de la lista
     lista.forEachIndexed { index, producto ->
-        println("${index + 1}) Producto ${producto.getNombre()}: Precio original = ${producto.getPrecio()}, Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
+        println("${index + 1}) Producto ${producto.getNombre()}: Precio original = ${producto.getPrecio()}, " +
+                "Descuento = ${producto.getDescuento()}%, Precio final = ${producto.precioDescontado()}")
     }
 }
 
@@ -45,7 +46,7 @@ fun editarProducto(lista: MutableList<Producto>, utils: Utils) {
     // Listando los productos
     listarProductos(lista,"*** Editar Producto ***")
     // Leyendo la opcion a editar
-    val opcion = utils.conversionEntero("Editar Producto: ", 0, lista.size - 1)
+    val opcion = utils.conversionEntero("Editar Producto: ", 1, lista.size)
     // Editando producto
     println("Producto ${lista[opcion].getNombre()}")
     print("Nombre: ")
@@ -60,9 +61,9 @@ fun eliminarProductoPorIndice(lista: MutableList<Producto>, utils: Utils) {
     // Listar los productos
     listarProductos(lista, "*** Eliminar Producto ***")
     // Recibiendo opcion a eliminar
-    val opcion = utils.conversionEntero("Eliminar Producto: ", 0, lista.size - 1)
+    val opcion = utils.conversionEntero("Eliminar Producto: ", 1, lista.size)
     // Eliminando Producto
-    val productoEliminado = lista.removeAt(opcion)
+    lista.removeAt(opcion)
     println("<< Producto eliminado >>")
 }
 
