@@ -5,10 +5,15 @@ class Revista: Material() {
     override var titulo: String = ""
     override var autor: String = ""
     override var anioPublicacion: String = ""
+    override var tipo: String = "Tipo"
+    override var estado: Boolean = true
+
+    // Atributos propios de la clase
     var issn: String = ""
     var volumen: Int = 0
     var numero: Int = 0
     var editorial: String = ""
+
 
     // Generando función para determinar los valores de la clase
     fun libro(titulo: String, autor: String, anioPublicacion: String, issn: String, volumen: Int,
@@ -24,12 +29,12 @@ class Revista: Material() {
 
     // Mostrando los detalles de la clase
     override fun mostrarDetalles(){
-        println("Titulo: ${this.titulo}")
-        println("Autor: ${this.autor}")
-        println("Año de Publicacion: ${this.anioPublicacion}")
-        println("ISSN: ${this.issn}")
-        println("Volumen: ${this.volumen}")
-        println("Número: ${this.numero}")
-        println("Editorial: ${this.editorial}")
+        print("Titulo: ${this.titulo}. ")
+        print("Autor: ${this.autor}. ")
+        print("Año de Publicacion: ${this.anioPublicacion}. ")
+        print("ISSN: ${this.issn}. ")
+        print("Volumen: ${this.volumen}. ")
+        print("Número: ${this.numero}. ")
+        print("Editorial: ${this.editorial}. ")
     }
 }

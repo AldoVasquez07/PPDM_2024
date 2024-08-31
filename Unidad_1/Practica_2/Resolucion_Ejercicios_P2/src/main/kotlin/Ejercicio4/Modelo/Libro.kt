@@ -5,6 +5,9 @@ class Libro: Material() {
     override var titulo: String = ""
     override var autor: String = ""
     override var anioPublicacion: String = ""
+    override var tipo: String = "Libro"
+    override var estado: Boolean = true
+
     //Integrando Atributos propios
     var genero: String = ""
     var numeroPaginas: Int = 0
@@ -20,10 +23,10 @@ class Libro: Material() {
 
     // Mostrando los detalles de la clase
     override fun mostrarDetalles(){
-        println("Titulo: ${this.titulo}")
-        println("Autor: ${this.autor}")
-        println("Año de Publicacion: ${this.anioPublicacion}")
-        println("Genero: ${this.genero}")
-        println("N° Paginas: ${this.numeroPaginas}")
+        print("Titulo: ${this.titulo}. ")
+        print("Autor: ${this.autor}. ")
+        print("Año de Publicacion: ${this.anioPublicacion}. ")
+        print("Genero: ${this.genero}. ")
+        print("N° Paginas: ${this.numeroPaginas}")
     }
 }

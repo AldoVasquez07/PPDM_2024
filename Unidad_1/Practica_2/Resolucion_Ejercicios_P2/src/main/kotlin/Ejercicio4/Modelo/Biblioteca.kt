@@ -9,7 +9,7 @@ class Biblioteca: IBiblioteca {
     var materiales: MutableList<Material> = mutableListOf()
 
     override fun registrarMaterial(){
-        
+
 
     }
     override fun registrarUsuario(){
@@ -22,9 +22,17 @@ class Biblioteca: IBiblioteca {
 
     }
     override fun mostrarMaterialesDisponibles(){
-
+        this.materiales.forEachIndexed { index, material ->
+            if(material.estado) {
+                println("${index + 1}) Tipo: ${material.tipo}. ${material.mostrarDetalles()}")
+            }
+        }
     }
     override fun mostrarMaterialesReservados(){
-
+        this.materiales.forEachIndexed { index, material ->
+            if(!material.estado) {
+                println("${index + 1}) Tipo: ${material.tipo}. ${material.mostrarDetalles()}")
+            }
+        }
     }
 }
