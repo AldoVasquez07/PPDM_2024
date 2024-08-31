@@ -1,6 +1,7 @@
 package Ejercicio3.Modelo
 
 class Rectangulo(private val largo: Double, private val ancho: Double) : Shape() {
+    override var nombre: String = "Rectangulo"
     override var area: Double = 0.0
     override var perimetro: Double = 0.0
 

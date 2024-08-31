@@ -1,6 +1,7 @@
 package Ejercicio3.Modelo
 
 class Utils {
+
     fun conversionEntero(mensaje: String, limiteInferior: Int, limiteSuperior: Int): Int{
         while (true) {
             // Imprimiendo mensaje pasado por parametro
