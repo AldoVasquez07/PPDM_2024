@@ -1,6 +1,7 @@
 package Ejercicio4.Modelo
 
 class Revista: Material() {
+    // Sobre-Escribiendo aspectos de la clase Abstracta Material
     override var titulo: String = ""
     override var autor: String = ""
     override var anioPublicacion: String = ""
@@ -9,6 +10,7 @@ class Revista: Material() {
     var numero: Int = 0
     var editorial: String = ""
 
+    // Generando función para determinar los valores de la clase
     fun libro(titulo: String, autor: String, anioPublicacion: String, issn: String, volumen: Int,
               numero: Int, editorial: String){
         this.titulo = titulo
@@ -20,6 +22,7 @@ class Revista: Material() {
         this.editorial = editorial
     }
 
+    // Mostrando los detalles de la clase
     override fun mostrarDetalles(){
         println("Titulo: ${this.titulo}")
         println("Autor: ${this.autor}")
