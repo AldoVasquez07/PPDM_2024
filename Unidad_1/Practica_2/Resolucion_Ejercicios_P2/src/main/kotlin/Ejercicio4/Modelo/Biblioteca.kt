@@ -2,43 +2,57 @@ package Ejercicio4.Modelo
 
 import Ejercicio4.Interfaces.IBiblioteca
 
-// Implementando Interface
-class Biblioteca: IBiblioteca {
-    // Generando listas para determinar los aspectos de la biblioteca
-    var usuarios: MutableList<Usuario> = mutableListOf()
-    var materiales: MutableList<Material> = mutableListOf()
-    var util = Utils()
+// Clase que implementa la interfaz IBiblioteca
+class Biblioteca : IBiblioteca {
+    // Lista de materiales disponibles
+    private val materialesDisponibles = mutableListOf<Material>()
 
-    override fun registrarMaterial(material: Material){
-        println("... Registrando Material ...")
-        materiales.add(material)
+    // Mapa de usuarios y sus materiales en préstamo
+    private val usuarios = mutableMapOf<Usuario, MutableList<Material>>()
+
+    // Registra un nuevo material en la biblioteca
+    override fun registrarMaterial(material: Material) {
+        materialesDisponibles.add(material)
+        println("Material registrado: ${material.mostrarDetalles()}")
     }
-    override fun registrarUsuario(usuario: Usuario){
-        println("... Registrando Usuario ...")
-        usuarios.add(usuario)
+
+    // Registra un nuevo usuario
+    override fun registrarUsuario(usuario: Usuario) {
+        usuarios.putIfAbsent(usuario, mutableListOf())
+        println("Usuario registrado: $usuario")
     }
-    override fun prestamo(){
-        mostrarMaterialesDisponibles()
-        val index = this.util.conversionEntero("Pedir Prestado: ", 1, this.materiales.size)
-        materiales[index].estado = false
-    }
-    override fun devolucion(){
-        mostrarMaterialesReservados()
-        val index = this.util.conversionEntero("Devolver: ", 1, this.materiales.size)
-        materiales[index].estado = true
-    }
-    override fun mostrarMaterialesDisponibles(){
-        this.materiales.forEachIndexed { index, material ->
-            if(material.estado) {
-                println("${index + 1}) Tipo: ${material.tipo}. ${material.mostrarDetalles()}")
-            }
+
+    // Realiza un préstamo de material a un usuario
+    override fun prestamo(usuario: Usuario, material: Material): Boolean {
+        if (materialesDisponibles.contains(material)) {
+            materialesDisponibles.remove(material)
+            usuarios[usuario]?.add(material)
+            println("Préstamo realizado: ${material.mostrarDetalles()} a ${usuario.nombre} ${usuario.apellido}")
+            return true
         }
+        println("El material no está disponible para préstamo.")
+        return false
     }
-    override fun mostrarMaterialesReservados(){
-        this.materiales.forEachIndexed { index, material ->
-            if(!material.estado) {
-                println("${index + 1}) Tipo: ${material.tipo}. ${material.mostrarDetalles()}")
-            }
+
+    // Realiza la devolución de un material
+    override fun devolucion(usuario: Usuario, material: Material): Boolean {
+        if (usuarios[usuario]?.contains(material) == true) {
+            usuarios[usuario]?.remove(material)
+            materialesDisponibles.add(material)
+            println("Devolución realizada: ${material.mostrarDetalles()} de ${usuario.nombre} ${usuario.apellido}")
+            return true
         }
+        println("El usuario no tiene ese material en préstamo.")
+        return false
+    }
+
+    // Devuelve la lista de materiales disponibles
+    override fun mostrarMaterialesDisponibles(): List<Material> {
+        return materialesDisponibles
+    }
+
+    // Muestra los materiales reservados por un usuario
+    override fun mostrarMaterialesReservados(usuario: Usuario): List<Material> {
+        return usuarios[usuario] ?: listOf()
     }
 }

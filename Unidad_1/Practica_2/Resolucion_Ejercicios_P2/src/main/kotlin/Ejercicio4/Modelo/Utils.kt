@@ -61,4 +61,10 @@ class Utils {
             }
         }
     }
+
+    // Generando Funcion para leer la cadena
+    fun leerCadena(mensaje: String): String{
+        print(mensaje)
+        return readln()
+    }
 }

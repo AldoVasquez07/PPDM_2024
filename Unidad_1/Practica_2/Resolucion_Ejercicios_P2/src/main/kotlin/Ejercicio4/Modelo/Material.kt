@@ -1,13 +1,10 @@
 package Ejercicio4.Modelo
 
-abstract class Material {
-    // Generando Atributos Abstractos
-    abstract var titulo: String
-    abstract var autor: String
-    abstract var anioPublicacion: String
-    abstract var tipo: String
-    abstract var estado: Boolean
-
-    // Generando Funcion Abstracto
-    abstract fun mostrarDetalles()
+//Creando Clase Abstracta
+abstract class Material(
+    var titulo: String,
+    var autor: String,
+    var anioPublicacion: Int
+) {
+    abstract fun mostrarDetalles(): String
 }
