@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageSpinner: Spinner
     private lateinit var nextButton: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,5 +22,12 @@ class MainActivity : AppCompatActivity() {
         val imageNames = arrayOf("Image 1", "Image 2", "Image 3")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, imageNames)
         imageSpinner.adapter = adapter
+
+        // Mantener la selección del Spinner al rotar
+        if (savedInstanceState != null) {
+            imageSpinner.setSelection(savedInstanceState.getInt("spinner_position"))
+        }
+
+
     }
 }
