@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             imageSpinner.setSelection(savedInstanceState.getInt("spinner_position"))
         }
 
-
+        nextButton.setOnClickListener {
+            val selectedImage = imageSpinner.selectedItemPosition
+            val intent = Intent(this, ImageActivity::class.java)
+            intent.putExtra("image_index", selectedImage)
+            startActivity(intent)
+        }
     }
 }
