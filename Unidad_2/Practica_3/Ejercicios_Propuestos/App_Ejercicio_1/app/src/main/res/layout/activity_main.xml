@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- TextView centrado en la pantalla -->
+    <!-- Texto centrado en la pantalla -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -17,8 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/imageSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"/>
 
     <!-- Spinner para seleccionar las imágenes -->
     <Spinner
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="10dp" />
 
     <!-- Botón para pasar a la siguiente actividad -->
     <Button
