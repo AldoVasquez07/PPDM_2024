@@ -18,8 +18,7 @@ class MainActivity : AppCompatActivity() {
         imageSpinner = findViewById(R.id.imageSpinner)
         nextButton = findViewById(R.id.nextButton)
 
-        val imageNames = arrayOf("Image 1", "Image 2", "Image 3")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, imageNames)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, Utils.imageNames)
         imageSpinner.adapter = adapter
 
         // Mantener la selección del Spinner al rotar

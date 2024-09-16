@@ -3,13 +3,16 @@ package com.ppdm.app_ejercicio_1
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ImageActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
+    private lateinit var headerText: TextView
     private var imageIndex: Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,10 +20,13 @@ class ImageActivity : AppCompatActivity() {
 
         imageView = findViewById(R.id.imageView)
         backButton = findViewById(R.id.backButton)
+        headerText = findViewById(R.id.headerText)
 
         // Recuperar el índice de la imagen del Intent o del estado guardado
         val savedImageIndex = savedInstanceState?.getInt("saved_image_index")
         imageIndex = intent.getIntExtra("image_index", savedImageIndex ?: 0)
+
+        updateHeaderText(Utils.imageNames[imageIndex])
 
         // Lista de imágenes
         val images = arrayOf(
@@ -43,6 +49,9 @@ class ImageActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         // Guardar el índice de la imagen en el estado guardado
         outState.putInt("saved_image_index", imageIndex)
+    }
+    private fun updateHeaderText(text: String) {
+        headerText.text = text
     }
 }
 
