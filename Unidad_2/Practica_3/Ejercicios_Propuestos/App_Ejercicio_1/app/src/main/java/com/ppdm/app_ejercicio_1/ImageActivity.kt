@@ -9,11 +9,7 @@ class ImageActivity : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt("saved_image_index", imageIndex)
-    }
+    private var imageIndex: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,22 +18,31 @@ class ImageActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         backButton = findViewById(R.id.backButton)
 
+        // Recuperar el índice de la imagen del Intent o del estado guardado
+        val savedImageIndex = savedInstanceState?.getInt("saved_image_index")
+        imageIndex = intent.getIntExtra("image_index", savedImageIndex ?: 0)
 
-        val imageIndex = intent.getIntExtra("image_index", 0)
-
-        // Lista de Imagenes
+        // Lista de imágenes
         val images = arrayOf(
             R.drawable.image1,
             R.drawable.image2,
             R.drawable.image3
         )
 
-        // Renderizar la Imagen deseada
-        imageView.setImageResource(images[imageIndex])
+        // Validar el índice para evitar errores
+        val validIndex = imageIndex.coerceIn(images.indices)
+        imageView.setImageResource(images[validIndex])
 
-        // Retornar a la Funcion Anterior
+        // Configurar el botón para regresar a la actividad anterior
         backButton.setOnClickListener {
             finish()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Guardar el índice de la imagen en el estado guardado
+        outState.putInt("saved_image_index", imageIndex)
+    }
 }
+
