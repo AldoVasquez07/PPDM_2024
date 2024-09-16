@@ -5,40 +5,31 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.ppdm.app_ejercicio_2.PlayBackActivity
+import com.ppdm.app_ejercicio_2.R
+import com.ppdm.app_ejercicio_2.Utils
 
 class MainActivity : AppCompatActivity() {
-    // Declarando Atributos
-    private lateinit var imageSpinner: Spinner
-    private lateinit var nextButton: Button
+    private lateinit var audioSpinner: Spinner
+    private lateinit var selectButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Realizando búsqueda de los componentes XML
-        imageSpinner = findViewById(R.id.imageSpinner)
-        nextButton = findViewById(R.id.nextButton)
+        audioSpinner = findViewById(R.id.audioSpinner)
+        selectButton = findViewById(R.id.selectButton)
 
-        // Pasando la Información al Spinner del Array de Opciones
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, Utils.imageNames)
-        imageSpinner.adapter = adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,
+            Utils.audioNames)
+        audioSpinner.adapter = adapter
 
-        // Mantener la selección del Spinner al rotar
-        if (savedInstanceState != null) {
-            imageSpinner.setSelection(savedInstanceState.getInt(Utils.spinnerPosition))
-        }
-
-        // LLamando a la Actividad: ImageActivity, para mostrar la imagen
-        nextButton.setOnClickListener {
-            val selectedImage = imageSpinner.selectedItemPosition
-            //val intent = Intent(this, ImageActivity::class.java)
-            intent.putExtra(Utils.imageIndex, selectedImage)
+        selectButton.setOnClickListener {
+            val selectedAudio = audioSpinner.selectedItemPosition
+            val intent = Intent(this, PlayBackActivity::class.java)
+            intent.putExtra("audio_index", selectedAudio)
             startActivity(intent)
         }
-
     }
 }
