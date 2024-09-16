@@ -10,6 +10,11 @@ class ImageActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("saved_image_index", imageIndex)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image)

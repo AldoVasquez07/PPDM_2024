@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var imageSpinner: Spinner
     private lateinit var nextButton: Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
