@@ -35,4 +35,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Guardar la posición seleccionada del Spinner
+        outState.putInt("spinner_position", imageSpinner.selectedItemPosition)
+    }
 }
