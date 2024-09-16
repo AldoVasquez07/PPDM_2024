@@ -7,24 +7,24 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ImageActivity : AppCompatActivity() {
-
+    // Declarando Atributos
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
     private lateinit var headerText: TextView
     private var imageIndex: Int = 0
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image)
 
+        // Realizando búsqueda de los componentes XML
         imageView = findViewById(R.id.imageView)
         backButton = findViewById(R.id.backButton)
         headerText = findViewById(R.id.headerText)
 
         // Recuperar el índice de la imagen del Intent o del estado guardado
-        val savedImageIndex = savedInstanceState?.getInt("saved_image_index")
-        imageIndex = intent.getIntExtra("image_index", savedImageIndex ?: 0)
+        val savedImageIndex = savedInstanceState?.getInt(Utils.savedImageIndex)
+        imageIndex = intent.getIntExtra(Utils.imageIndex, savedImageIndex ?: 0)
 
         updateHeaderText(Utils.imageNames[imageIndex])
 
@@ -48,9 +48,11 @@ class ImageActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         // Guardar el índice de la imagen en el estado guardado
-        outState.putInt("saved_image_index", imageIndex)
+        outState.putInt(Utils.savedImageIndex, imageIndex)
     }
+
     private fun updateHeaderText(text: String) {
+        // Cambiando la cabecera de la Imagen
         headerText.text = text
     }
 }

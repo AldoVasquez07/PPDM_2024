@@ -8,6 +8,7 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    // Declarando Atributos
     private lateinit var imageSpinner: Spinner
     private lateinit var nextButton: Button
 
@@ -15,21 +16,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Realizando búsqueda de los componentes XML
         imageSpinner = findViewById(R.id.imageSpinner)
         nextButton = findViewById(R.id.nextButton)
 
+        // Pasando la Información al Spinner del Array de Opciones
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, Utils.imageNames)
         imageSpinner.adapter = adapter
 
         // Mantener la selección del Spinner al rotar
         if (savedInstanceState != null) {
-            imageSpinner.setSelection(savedInstanceState.getInt("spinner_position"))
+            imageSpinner.setSelection(savedInstanceState.getInt(Utils.spinnerPosition))
         }
 
+        // LLamando a la Actividad: ImageActivity, para mostrar la imagen
         nextButton.setOnClickListener {
             val selectedImage = imageSpinner.selectedItemPosition
             val intent = Intent(this, ImageActivity::class.java)
-            intent.putExtra("image_index", selectedImage)
+            intent.putExtra(Utils.imageIndex, selectedImage)
             startActivity(intent)
         }
     }
@@ -37,6 +41,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         // Guardar la posición seleccionada del Spinner
-        outState.putInt("spinner_position", imageSpinner.selectedItemPosition)
+        outState.putInt(Utils.spinnerPosition, imageSpinner.selectedItemPosition)
     }
 }
