@@ -18,60 +18,77 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 3 del curso
     ```bash
     cd PPDM_2024/Unidad_2/Practica_3/Resolucion_Ejercicios
     ```
-3. **Abrir el proyecto** `Ejercicio_1` o `Ejercicio_2` utilizando el IDE Android Studio.
-4. Dentro de IntelliJ IDEA, **navegar** a:
+3. **Abrir el proyecto** `App_Ejercicio_1` o `App_Ejercicio_2` utilizando el IDE Android Studio.
+4. Dentro de Android Studio, utilizar** vista:
     ```
-    src/main/kotlin/
+    Android
     ```
-5. Seleccionar la carpeta correspondiente al ejercicio que se desea ejecutar (`Ejercicio_1`, `Ejercicio_2`, `Ejercicio_3`, `Ejercicio_4`).
-6. Se debe tener en cuenta que, la estructura de cada carpeta es: (`Controlador`, `Modelo`, `Interface`) 
-6. **Ejecutar** el código haciendo clic derecho en el archivo `Controlador/Main_Ejercicio_X.kt` y seleccionando `Run`.
-7. **Observar los resultados** en la consola de salida.
+5. Generar un Dispositivo Virtual o conectar Dispositivo Físico, con Android 11 (API 30).
+6. Probar la Aplicación Elegida dentro del Móvil.
 
 ## Estructura Detallada del Proyecto
 
 ```plaintext
 
-PPDM_2024/
-├── Ejercicios_Propuestos_P2/
-│   ├── .idea/
-│   ├── out/
-│   ├── src/
-│   │   ├── main/
-│   │   │   └── kotlin/
-│   │   │       ├── Ejercicio_1/
-│   │   │       │   ├── Modelo/
-│   │   │       │   │   ├── CuentaBancaria.kt
-│   │   │       │   │   └── Utils.kt
-│   │   │       │   └── Controlador/
-│   │   │       │       └── MainEjercicio1.kt
-│   │   │       ├── Ejercicio_2/
-│   │   │       │   ├── Modelo/
-│   │   │       │   │   ├── Producto.kt
-│   │   │       │   │   └── Utils.kt
-│   │   │       │   └── Controlador/
-│   │   │       │       └── MainEjercicio2.kt
-│   │   │       ├── Ejercicio_3/
-│   │   │       │   ├── Modelo/
-│   │   │       │   │   ├── Circulo.kt
-│   │   │       │   │   ├── Cuadrado.kt
-│   │   │       │   │   ├── Rectangulo.kt
-│   │   │       │   │   └── Shape.kt
-│   │   │       │   └── Controlador/
-│   │   │       │       └── MainEjercicio3.kt
-│   │   │       ├── Ejercicio_4/
-│   │   │       │   ├── Interfaces/
-│   │   │       │   │   └── IBiblioteca.kt
-│   │   │       │   ├── Modelo/
-│   │   │       │   │   ├── Biblioteca.kt
-│   │   │       │   │   ├── Libro.kt
-│   │   │       │   │   ├── Material.kt
-│   │   │       │   │   ├── Revista.kt
-│   │   │       │   │   └── Usuario.kt
-│   │   │       │   └── Controlador/
-│   │   │       │       └── MainEjercicio4.kt
-│   ├── .gitignore
-│   └── Resolucion_Ejercicios_P2.iml
-├── Rubrica/
-│   └── Rubrica_Practica_2.docx
-└── README.md
+PPDM_2024
+└───Unidad_2
+    └───Practica_3
+        ├───Ejercicios_Propuestos
+        │   ├───App_Ejercicio_1
+        │   │   ├───.idea
+        │   │   ├───app
+        │   │   │   └───src
+        │   │   │       ├───main
+        │   │   │       │   ├───java
+        │   │   │       │   │   └───com
+        │   │   │       │   │       └───ppdm
+        │   │   │       │   │           └───app_ejercicio_1
+        │   │   │       │   └───res
+        │   │   │       │       ├───drawable
+        │   │   │       │       ├───layout
+        │   │   │       │       ├───mipmap-anydpi
+        │   │   │       │       ├───mipmap-hdpi
+        │   │   │       │       ├───mipmap-mdpi
+        │   │   │       │       ├───mipmap-xhdpi
+        │   │   │       │       ├───mipmap-xxhdpi
+        │   │   │       │       ├───mipmap-xxxhdpi
+        │   │   │       │       ├───values
+        │   │   │       │       ├───values-night
+        │   │   │       │       └───xml
+        │   │   │       └───test
+        │   │   │           └───java
+        │   │   │               └───com
+        │   │   │                   └───ppdm
+        │   │   │                       └───app_ejercicio_1
+        │   │   └───gradle
+        │   │       └───wrapper
+	│   │   
+        │   └───App_Ejercicio_2
+        │       ├───.idea
+        │       ├───app
+        │       │   └───src
+        │       │       ├───main
+        │       │       │   ├───java
+        │       │       │   │   └───com
+        │       │       │   │       └───ppdm
+        │       │       │   │           └───app_ejercicio_2
+        │       │       │   └───res
+        │       │       │       ├───drawable
+        │       │       │       ├───layout
+        │       │       │       ├───mipmap-anydpi
+        │       │       │       ├───mipmap-hdpi
+        │       │       │       ├───mipmap-mdpi
+        │       │       │       ├───mipmap-xhdpi
+        │       │       │       ├───mipmap-xxhdpi
+        │       │       │       ├───mipmap-xxxhdpi
+        │       │       │       ├───raw
+        │       │       │       ├───values
+        │       │       │       ├───values-night
+        │       │       │       └───xml
+        │       │       └───test
+        │       │           └───java
+        │       │               └───com
+        │       │                   └───ppdm
+        │       │                       └───app_ejercicio_2
+        │       │	
+	└───Rubrica
