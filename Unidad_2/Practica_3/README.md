@@ -19,7 +19,7 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 3 del curso
     cd PPDM_2024/Unidad_2/Practica_3/Resolucion_Ejercicios
     ```
 3. **Abrir el proyecto** `App_Ejercicio_1` o `App_Ejercicio_2` utilizando el IDE Android Studio.
-4. Dentro de Android Studio, utilizar** vista:
+4. Dentro de Android Studio, **utilizar** vista:
     ```
     Android
     ```
