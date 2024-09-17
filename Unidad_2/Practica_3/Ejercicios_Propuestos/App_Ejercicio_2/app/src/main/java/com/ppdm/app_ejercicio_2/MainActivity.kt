@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         audioSpinner = findViewById(R.id.audioSpinner)
-        selectButton = findViewById(R.id.selectButton)
+        selectButton = findViewById(R.id.nextButton)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,
             Utils.audioNames)

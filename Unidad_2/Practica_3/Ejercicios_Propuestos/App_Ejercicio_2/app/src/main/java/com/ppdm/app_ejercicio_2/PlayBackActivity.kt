@@ -29,11 +29,11 @@ class PlayBackActivity : AppCompatActivity() {
 
         currentAudioIndex = intent.getIntExtra("audio_index", 0)
         val audioFiles = arrayOf(
-            R.raw.A_Kind_Of_Magic,
-            R.raw.Better,
-            R.raw.Creep,
-            R.raw.Every_Breath_You_Take,
-            R.raw.Someone_To_Spend_Time_With
+            R.raw.a_king_of_magic,
+            R.raw.better,
+            R.raw.creep,
+            R.raw.every_breath_you_take,
+            R.raw.someone_to_spend_time_with
         )
         val audioTitles = arrayOf("A Kind of Maigc", "Better", "Creep", "Every Breath you Take",
             "Someone to Spend Time With")
