@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/audioImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:src="@drawable/music_icon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,34 +29,36 @@
         android:layout_marginTop="16dp"
         android:gravity="center"/>
 
-    <Button
-        android:id="@+id/playButton"
+    <!-- LinearLayout para los botones -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reproducir"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/audioTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp">
 
-    <Button
-        android:id="@+id/pauseButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pausar"
-        app:layout_constraintTop_toBottomOf="@+id/playButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_play" />
 
-    <Button
-        android:id="@+id/stopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detener"
-        app:layout_constraintTop_toBottomOf="@+id/pauseButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_pause"
+            android:layout_marginStart="25dp"/>
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/icon_fin"
+            android:layout_marginStart="25dp"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

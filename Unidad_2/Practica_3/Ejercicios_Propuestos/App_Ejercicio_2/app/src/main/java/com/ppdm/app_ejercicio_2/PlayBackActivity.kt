@@ -35,10 +35,8 @@ class PlayBackActivity : AppCompatActivity() {
             R.raw.every_breath_you_take,
             R.raw.someone_to_spend_time_with
         )
-        val audioTitles = arrayOf("A Kind of Maigc", "Better", "Creep", "Every Breath you Take",
-            "Someone to Spend Time With")
 
-        audioTitle.text = audioTitles[currentAudioIndex]
+        audioTitle.text = Utils.audioNames[currentAudioIndex]
         mediaPlayer = MediaPlayer.create(this, audioFiles[currentAudioIndex])
 
         playButton.setOnClickListener {

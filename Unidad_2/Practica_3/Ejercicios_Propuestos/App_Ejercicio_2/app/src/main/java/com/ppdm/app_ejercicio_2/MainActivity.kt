@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         selectButton.setOnClickListener {
             val selectedAudio = audioSpinner.selectedItemPosition
             val intent = Intent(this, PlayBackActivity::class.java)
-            intent.putExtra("audio_index", selectedAudio)
+            intent.putExtra(Utils.audioIndex, selectedAudio)
             startActivity(intent)
         }
     }

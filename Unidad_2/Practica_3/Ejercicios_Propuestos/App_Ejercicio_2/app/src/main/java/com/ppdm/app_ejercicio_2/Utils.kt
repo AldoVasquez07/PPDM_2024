@@ -6,6 +6,5 @@ object Utils {
         "Someone to Spend Time")
     // Valores constantes usados en los Activities
     val spinnerPosition = "spinner_position"
-    val imageIndex = "image_index"
-    val savedImageIndex = "saved_image_index"
+    val audioIndex = "audio_index"
 }
