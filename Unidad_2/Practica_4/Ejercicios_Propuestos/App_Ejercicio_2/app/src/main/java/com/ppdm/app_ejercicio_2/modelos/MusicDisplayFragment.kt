@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 
-class PlayBackActivity : AppCompatActivity() {
+class MusicDisplayFragment : AppCompatActivity() {
     private lateinit var audioImage: ImageView
     private lateinit var audioTitle: TextView
     private lateinit var playButton: Button
