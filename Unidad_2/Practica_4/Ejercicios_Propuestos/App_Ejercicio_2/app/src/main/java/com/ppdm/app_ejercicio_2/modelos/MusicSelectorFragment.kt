@@ -1,6 +1,6 @@
 package com.ppdm.app_ejercicio_2.modelos
 
-import android.R
+import com.ppdm.app_ejercicio_2.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,10 +21,10 @@ class MusicSelectorFragment: Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View?{
         val view = inflater.inflate(R.layout.fragment_music_selector, container, false)
-        musicSpinner = view.findViewById(com.ppdm.app_ejercicio_2.R.id.musicSpinner)
-        nextButton = view.findViewById(com.ppdm.app_ejercicio_2.R.id.nextButton)
+        musicSpinner = view.findViewById(R.id.musicSpinner)
+        nextButton = view.findViewById(R.id.nextButton)
 
-        val adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, Utils.musicNames)
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, Utils.musicNames)
         musicSpinner.adapter = adapter
 
         nextButton.setOnClickListener {
