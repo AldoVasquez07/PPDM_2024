@@ -7,5 +7,5 @@ import androidx.fragment.app.Fragment
 class MusicSelectorFragment: Fragment() {
     private lateinit var musicSpinner: Spinner
     private lateinit var nextButton: Button
-    
+
 }
