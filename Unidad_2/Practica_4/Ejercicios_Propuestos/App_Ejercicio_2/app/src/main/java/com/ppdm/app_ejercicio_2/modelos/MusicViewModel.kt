@@ -4,11 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MusicViewModel : ViewModel() {
-    private val _selectedImageIndex = MutableLiveData<Int>()
-    val selectedImageIndex: LiveData<Int> get() = _selectedImageIndex
 
-    fun selectImage(index: Int) {
-        _selectedImageIndex.value = index
+class MusicViewModel : ViewModel() {
+    private val _selectedMusicIndex = MutableLiveData<Int>()
+    val selectedMusicIndex: LiveData<Int> get() = _selectedMusicIndex
+
+    fun selectMusic(index: Int) {
+        _selectedMusicIndex.value = index
     }
 }

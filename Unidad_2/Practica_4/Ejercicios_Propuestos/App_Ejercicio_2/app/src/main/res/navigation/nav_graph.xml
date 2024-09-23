@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/imageSelectorFragment">
+
+    <fragment
+        android:id="@+id/imageSelectorFragment"
+        android:name="com.ppdm.app_ejercicio_1.modelos.MusicSelectorFragment"
+        tools:layout="@layout/fragment_music_selector">
+        <action
+            android:id="@+id/action_musicSelectorFragment_to_musicDisplayFragment"
+            app:destination="@id/imageDisplayFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageDisplayFragment"
+        android:name="com.ppdm.app_ejercicio_1.modelos.MusicDisplayFragment"
+        tools:layout="@layout/fragment_music_display" />
+</navigation>
