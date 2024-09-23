@@ -16,6 +16,7 @@ class ImageDisplayFragment : Fragment() {
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
     private lateinit var headerText: TextView
+    private lateinit var infoImage: TextView
     private val viewModel: ImageViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -26,10 +27,12 @@ class ImageDisplayFragment : Fragment() {
         imageView = view.findViewById(R.id.imageView)
         backButton = view.findViewById(R.id.backButton)
         headerText = view.findViewById(R.id.headerText)
+        infoImage = view.findViewById(R.id.infoImage)
 
         // Observar el índice de imagen seleccionado
         viewModel.selectedImageIndex.observe(viewLifecycleOwner) { index ->
             headerText.text = Utils.imageNames[index]
+            infoImage.text = Utils.imageDescription[index]
 
             // Lista de imágenes
             val images = arrayOf(
@@ -40,6 +43,7 @@ class ImageDisplayFragment : Fragment() {
 
             val validIndex = index.coerceIn(images.indices)
             imageView.setImageResource(images[validIndex])
+
         }
 
         backButton.setOnClickListener {
