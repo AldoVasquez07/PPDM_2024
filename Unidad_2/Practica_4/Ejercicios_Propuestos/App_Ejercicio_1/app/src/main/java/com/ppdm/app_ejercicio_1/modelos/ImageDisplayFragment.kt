@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.ppdm.app_ejercicio_1.R
 
 class ImageDisplayFragment : Fragment() {
@@ -42,7 +43,7 @@ class ImageDisplayFragment : Fragment() {
         }
 
         backButton.setOnClickListener {
-            requireActivity().onBackPressed()
+            findNavController().navigateUp() // O también puedes usar popBackStack()
         }
 
         return view

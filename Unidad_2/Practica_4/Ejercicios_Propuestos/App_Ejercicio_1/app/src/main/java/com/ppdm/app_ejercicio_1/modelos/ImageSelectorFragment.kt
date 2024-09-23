@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.ppdm.app_ejercicio_1.R
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.findNavController
 
 class ImageSelectorFragment: Fragment() {
     private lateinit var imageSpinner: Spinner
