@@ -1,10 +1,8 @@
-package com.ppdm.app_ejercicio_2
+package com.ppdm.app_ejercicio_2.controlador
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.ppdm.app_ejercicio_2.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
