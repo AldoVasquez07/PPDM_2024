@@ -25,22 +25,23 @@
         android:paddingBottom="16dp" />
 
     <!-- Texto centrado en la pantalla -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seleccione una Imagen"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageSpinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"/>
 
 
     <!-- Spinner para seleccionar las imágenes -->
 
 
     <!-- Botón para pasar a la siguiente actividad -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:text="Seleccione una Imagen"
+        app:layout_constraintBottom_toTopOf="@+id/imageSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/imageSpinner"
