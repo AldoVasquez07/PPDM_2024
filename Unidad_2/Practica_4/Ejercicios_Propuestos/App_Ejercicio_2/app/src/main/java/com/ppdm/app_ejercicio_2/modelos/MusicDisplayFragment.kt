@@ -1,17 +1,18 @@
 package com.ppdm.app_ejercicio_2.modelos
 
-import androidx.fragment.app.Fragment
-import com.ppdm.app_ejercicio_2.R
-
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import com.ppdm.app_ejercicio_2.R
 
-class MusicDisplayFragment : AppCompatActivity() {
+class MusicDisplayFragment : Fragment() {
     private lateinit var audioImage: ImageView
     private lateinit var audioTitle: TextView
     private lateinit var playButton: Button
@@ -19,40 +20,26 @@ class MusicDisplayFragment : AppCompatActivity() {
     private lateinit var stopButton: Button
 
     private var mediaPlayer: MediaPlayer? = null
-    private val viewModel: MusicViewModel by viewModels() // Usando un ViewModel
+    private val viewModel: MusicViewModel by activityViewModels() // Usando un ViewModel
     private var currentAudioIndex: Int = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_music_display)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_music_display, container, false)
 
         // Inicializando los elementos UI
-        audioImage = findViewById(R.id.audioImage)
-        audioTitle = findViewById(R.id.audioTitle)
-        playButton = findViewById(R.id.playButton)
-        pauseButton = findViewById(R.id.pauseButton)
-        stopButton = findViewById(R.id.stopButton)
+        audioImage = view.findViewById(R.id.audioImage)
+        audioTitle = view.findViewById(R.id.audioTitle)
+        playButton = view.findViewById(R.id.playButton)
+        pauseButton = view.findViewById(R.id.pauseButton)
+        stopButton = view.findViewById(R.id.stopButton)
 
         // Observar el índice de audio seleccionado desde el ViewModel
-        viewModel.selectedMusicIndex.observe(this) { index ->
+        viewModel.selectedMusicIndex.observe(viewLifecycleOwner) { index ->
             currentAudioIndex = index
-
-            // Lista de archivos de audio
-            val audioFiles = arrayOf(
-                R.raw.a_king_of_magic,
-                R.raw.better,
-                R.raw.creep,
-                R.raw.every_breath_you_take,
-                R.raw.someone_to_spend_time_with
-            )
-
-            // Establecer el título del audio y la imagen
-            audioTitle.text = Utils.musicNames[currentAudioIndex]
-            setAudioImage(currentAudioIndex)
-
-            // Inicializar el MediaPlayer con el audio correspondiente
-            mediaPlayer?.release() // Liberar cualquier MediaPlayer existente
-            mediaPlayer = MediaPlayer.create(this, audioFiles[currentAudioIndex])
+            updateUI() // Actualizar la UI
         }
 
         // Configurar los listeners para los botones
@@ -68,9 +55,29 @@ class MusicDisplayFragment : AppCompatActivity() {
             mediaPlayer?.stop()
             mediaPlayer?.prepare() // Preparar para futuras reproducciones
         }
+
+        return view
     }
 
-    // Método para configurar la imagen correspondiente al audio
+    private fun updateUI() {
+        // Lista de archivos de audio
+        val audioFiles = arrayOf(
+            R.raw.a_king_of_magic,
+            R.raw.better,
+            R.raw.creep,
+            R.raw.every_breath_you_take,
+            R.raw.someone_to_spend_time_with
+        )
+
+        // Establecer el título del audio y la imagen
+        audioTitle.text = Utils.musicNames[currentAudioIndex]
+        setAudioImage(currentAudioIndex)
+
+        // Inicializar el MediaPlayer con el audio correspondiente
+        mediaPlayer?.release() // Liberar cualquier MediaPlayer existente
+        mediaPlayer = MediaPlayer.create(requireContext(), audioFiles[currentAudioIndex])
+    }
+
     private fun setAudioImage(index: Int) {
         val imageResId = when (index) {
             0 -> R.drawable.queen_logo

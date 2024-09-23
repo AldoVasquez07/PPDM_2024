@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/imageSelectorFragment"
-        android:name="com.ppdm.app_ejercicio_1.modelos.MusicSelectorFragment"
+        android:name="com.ppdm.app_ejercicio_2.modelos.MusicSelectorFragment"
         tools:layout="@layout/fragment_music_selector">
         <action
             android:id="@+id/action_musicSelectorFragment_to_musicDisplayFragment"
@@ -16,6 +16,6 @@
 
     <fragment
         android:id="@+id/imageDisplayFragment"
-        android:name="com.ppdm.app_ejercicio_1.modelos.MusicDisplayFragment"
+        android:name="com.ppdm.app_ejercicio_2.modelos.MusicDisplayFragment"
         tools:layout="@layout/fragment_music_display" />
 </navigation>
