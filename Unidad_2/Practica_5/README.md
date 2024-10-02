@@ -1,8 +1,8 @@
-# Práctica 4 - Programación para Dispositivos Móviles
+# Práctica 5 - Programación para Dispositivos Móviles
 
-Este repositorio contiene los ejercicios solicitados en la Práctica 4 del curso **Programación para Dispositivos Móviles**. Los ejercicios están resueltos utilizando el lenguaje de programación **Kotlin** y el entorno de desarrollo *Android Studio*.
+Este repositorio contiene los ejercicios solicitados en la Práctica 5 del curso **Programación para Dispositivos Móviles**. Los ejercicios están resueltos utilizando el lenguaje de programación **Kotlin** y el entorno de desarrollo *Android Studio*.
 
-## Estructura de la Práctica 4
+## Estructura de la Práctica 5
 
 - **Ejercicios_Propuestos**: Contiene la resolución de cada ejercicio solicitado.
 - **Rubrica**: Contiene la auto-evaluación correspondiente a la práctica.
@@ -16,9 +16,9 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 4 del curso
     ```
 2. **Navegar** a la carpeta de los ejercicios propuestos:
     ```bash
-    cd PPDM_2024/Unidad_2/Practica_4/Resolucion_Ejercicios
+    cd PPDM_2024/Unidad_2/Practica_5/Resolucion_Ejercicios
     ```
-3. **Abrir el proyecto** `App_Ejercicio_1` o `App_Ejercicio_2` utilizando el IDE Android Studio.
+3. **Abrir el proyecto** `App_Musica` utilizando el IDE Android Studio.
 4. Dentro de Android Studio, **utilizar** vista:
     ```
     Android
@@ -29,66 +29,3 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 4 del curso
 ## Estructura Detallada del Proyecto
 
 ```plaintext
-
-PPDM_2024
-└───Unidad_2
-    └───Practica_3
-        ├───Ejercicios_Propuestos
-        │   ├───App_Ejercicio_1
-        │   │   ├───.idea
-        │   │   ├───app
-        │   │   │   └───src
-        │   │   │       ├───main
-        │   │   │       │   ├───java
-        │   │   │       │   │   └───com
-        │   │   │       │   │       └───ppdm
-        │   │   │       │   │           └───app_ejercicio_1
-        │   │   │       │   └───res
-        │   │   │       │       ├───drawable
-        │   │   │       │       ├───layout
-        │   │   │       │       ├───mipmap-anydpi
-        │   │   │       │       ├───mipmap-hdpi
-        │   │   │       │       ├───mipmap-mdpi
-        │   │   │       │       ├───mipmap-xhdpi
-        │   │   │       │       ├───mipmap-xxhdpi
-        │   │   │       │       ├───mipmap-xxxhdpi
-        │   │   │       │       ├───values
-        │   │   │       │       ├───values-night
-        │   │   │       │       └───xml
-        │   │   │       └───test
-        │   │   │           └───java
-        │   │   │               └───com
-        │   │   │                   └───ppdm
-        │   │   │                       └───app_ejercicio_1
-        │   │   └───gradle
-        │   │       └───wrapper
-	│   │   
-        │   └───App_Ejercicio_2
-        │       ├───.idea
-        │       ├───app
-        │       │   └───src
-        │       │       ├───main
-        │       │       │   ├───java
-        │       │       │   │   └───com
-        │       │       │   │       └───ppdm
-        │       │       │   │           └───app_ejercicio_2
-        │       │       │   └───res
-        │       │       │       ├───drawable
-        │       │       │       ├───layout
-        │       │       │       ├───mipmap-anydpi
-        │       │       │       ├───mipmap-hdpi
-        │       │       │       ├───mipmap-mdpi
-        │       │       │       ├───mipmap-xhdpi
-        │       │       │       ├───mipmap-xxhdpi
-        │       │       │       ├───mipmap-xxxhdpi
-        │       │       │       ├───raw
-        │       │       │       ├───values
-        │       │       │       ├───values-night
-        │       │       │       └───xml
-        │       │       └───test
-        │       │           └───java
-        │       │               └───com
-        │       │                   └───ppdm
-        │       │                       └───app_ejercicio_2
-        │       │	
-	└───Rubrica
