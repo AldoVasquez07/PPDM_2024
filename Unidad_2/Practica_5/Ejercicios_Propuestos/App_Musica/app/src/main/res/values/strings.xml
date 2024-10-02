@@ -6,10 +6,10 @@
     <string name="ButtonPlay">Play</string>
     <string name="ButtonBack">Back</string>
     <!-- Header -->
-    <string name="header_title">Music Player</string>
+    <string name="header_title">Reproductor de Música</string>
 
     <!-- Description -->
-    <string name="description">Enjoy your favorite music with our app!</string>
+    <string name="description">¡Escucha música en un solo lugar!</string>
 
     <!-- Content Descriptions for ImageButtons -->
     <string name="play_description">Play the audio</string>

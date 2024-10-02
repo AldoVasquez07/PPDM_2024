@@ -68,34 +68,34 @@
         <!-- Play Button -->
         <ImageButton
             android:id="@+id/playButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon_play"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:background="@null"
             android:contentDescription="@string/play_description"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_play" />
 
         <!-- Pause Button -->
         <ImageButton
             android:id="@+id/pauseButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:src="@drawable/icon_pause"
             android:background="@null"
-            android:layout_marginStart="8dp"
             android:contentDescription="@string/pause_description"
             android:scaleType="fitCenter"/>
 
         <!-- Stop Button -->
         <ImageButton
             android:id="@+id/stopButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon_fin"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginStart="40dp"
             android:background="@null"
-            android:layout_marginStart="8dp"
             android:contentDescription="@string/stop_description"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_fin" />
 
     </LinearLayout>
 
