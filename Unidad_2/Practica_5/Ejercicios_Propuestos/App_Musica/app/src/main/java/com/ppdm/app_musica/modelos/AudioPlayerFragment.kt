@@ -12,10 +12,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.ppdm.app_musica.R
 
-
 class AudioPlayerFragment : Fragment() {
 
-    // Declaracion de Botones, MediaPlayer
+    // Declaración de Botones, MediaPlayer
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var playButton: ImageButton
     private lateinit var pauseButton: ImageButton
@@ -59,9 +58,24 @@ class AudioPlayerFragment : Fragment() {
         mediaPlayer = MediaPlayer.create(requireContext(), musica?.audioId ?: 0)
 
         // Lógica para reproducir, pausar y detener el audio
-        playButton.setOnClickListener { mediaPlayer.start() }
-        pauseButton.setOnClickListener { mediaPlayer.pause() }
-        stopButton.setOnClickListener { mediaPlayer.stop(); mediaPlayer.prepare() }
+        playButton.setOnClickListener {
+            mediaPlayer.start()
+            playButton.visibility = View.GONE // Ocultar el botón Play
+            pauseButton.visibility = View.VISIBLE // Mostrar el botón Pause
+        }
+
+        pauseButton.setOnClickListener {
+            mediaPlayer.pause()
+            playButton.visibility = View.VISIBLE // Mostrar el botón Play
+            pauseButton.visibility = View.GONE // Ocultar el botón Pause
+        }
+
+        stopButton.setOnClickListener {
+            mediaPlayer.stop()
+            mediaPlayer.prepare()
+            playButton.visibility = View.VISIBLE // Mostrar el botón Play
+            pauseButton.visibility = View.GONE // Ocultar el botón Pause
+        }
 
         // Lógica del botón de "volver"
         backButton.setOnClickListener {
@@ -75,6 +89,4 @@ class AudioPlayerFragment : Fragment() {
         super.onDestroy()
         mediaPlayer.release()
     }
-
-    
 }
