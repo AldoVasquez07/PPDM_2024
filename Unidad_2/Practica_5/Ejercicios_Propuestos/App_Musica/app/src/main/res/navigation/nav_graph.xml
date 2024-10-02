@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/musicSelectorFragment">
+
+    <!-- Fragmento del RecyclerView para seleccionar música -->
+    <fragment
+        android:id="@+id/musicSelectorFragment"
+        android:name="com.ppdm.app_ejercicio_2.modelos.MusicSelectorFragment"
+        tools:layout="@layout/fragment_music_selector">
+
+        <action
+            android:id="@+id/action_musicSelector_to_audioPlayerFragment"
+            app:destination="@id/audioPlayerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <!-- Fragmento para la reproducción de música -->
+    <fragment
+        android:id="@+id/audioPlayerFragment"
+        android:name="com.ppdm.app_ejercicio_2.modelos.AudioPlayerFragment"
+        tools:layout="@layout/fragment_audio_player" />
+
+</navigation>
