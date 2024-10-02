@@ -29,3 +29,40 @@ Este repositorio contiene los ejercicios solicitados en la Práctica 5 del curso
 ## Estructura Detallada del Proyecto
 
 ```plaintext
+├───Ejercicios_Propuestos
+│   └───App_Musica
+│       ├───app
+│       │   └───src
+│       │       ├───androidTest
+│       │       │   └───java
+│       │       │       └───com
+│       │       │           └───ppdm
+│       │       │               └───app_musica
+│       │       ├───main
+│       │       │   ├───java
+│       │       │   │   └───com
+│       │       │   │       └───ppdm
+│       │       │   │           └───app_musica
+│       │       │   │               ├───controlador
+│       │       │   │               └───modelos
+│       │       │   └───res
+│       │       │       ├───drawable
+│       │       │       ├───layout
+│       │       │       ├───mipmap-anydpi
+│       │       │       ├───mipmap-hdpi
+│       │       │       ├───mipmap-mdpi
+│       │       │       ├───mipmap-xhdpi
+│       │       │       ├───mipmap-xxhdpi
+│       │       │       ├───mipmap-xxxhdpi
+│       │       │       ├───raw
+│       │       │       ├───values
+│       │       │       ├───values-night
+│       │       │       └───xml
+│       │       └───test
+│       │           └───java
+│       │               └───com
+│       │                   └───ppdm
+│       │                       └───app_musica
+│       └───gradle
+│           └───wrapper
+└───Rubrica
