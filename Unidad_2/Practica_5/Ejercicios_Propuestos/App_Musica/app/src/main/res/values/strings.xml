@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">App_Musica</string>
+    <string name="nombre"> </string>
+    <string name="ButtonStop">Stop</string>
+    <string name="ButtonPause">Pause</string>
+    <string name="ButtonPlay">Play</string>
+    <string name="ButtonBack">Back</string>
+    <!-- Header -->
+    <string name="header_title">Music Player</string>
+
+    <!-- Description -->
+    <string name="description">Enjoy your favorite music with our app!</string>
+
+    <!-- Content Descriptions for ImageButtons -->
+    <string name="play_description">Play the audio</string>
+    <string name="pause_description">Pause the audio</string>
+    <string name="stop_description">Stop the audio</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.ppdm.app_musica.controlador
+package com.ppdm.app_musica.modelos
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ppdm.app_musica.R
-import com.ppdm.app_musica.modelos.Musica
 
 class MusicaAdapter(
     private val musicaList: List<Musica>,
@@ -15,9 +14,9 @@ class MusicaAdapter(
 ) : RecyclerView.Adapter<MusicaAdapter.AudioViewHolder>() {
 
     inner class AudioViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val audioImageView: ImageView = view.findViewById(R.id.audio_image)
-        val audioNameTextView: TextView = view.findViewById(R.id.audio_name)
-        val audioDurationTextView: TextView = view.findViewById(R.id.audio_duration)
+        val audioImageView: ImageView = view.findViewById(R.id.audioImage)
+        val audioNameTextView: TextView = view.findViewById(R.id.audioName)
+        val audioDurationTextView: TextView = view.findViewById(R.id.audioDuration)
 
         fun bind(musica: Musica) {
             audioImageView.setImageResource(musica.logoId)
@@ -31,7 +30,7 @@ class MusicaAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AudioViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.audio_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.musica, parent, false)
         return AudioViewHolder(view)
     }
 

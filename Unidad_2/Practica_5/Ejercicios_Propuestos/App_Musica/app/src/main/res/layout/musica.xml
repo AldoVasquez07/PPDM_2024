@@ -2,27 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="horizontal"
+    android:padding="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".modelos.MusicaAdapter">
 
     <ImageView
-        android:id="@+id/audio_image"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:contentDescription="@string/audio_image_desc" />
+        android:id="@+id/audioImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/music_icon" />
 
-    <TextView
-        android:id="@+id/audio_name"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:paddingTop="4dp" />
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="8dp">
 
-    <TextView
-        android:id="@+id/audio_duration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:paddingTop="2dp" />
+        <TextView
+            android:id="@+id/audioName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/audioDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00" />
+    </LinearLayout>
 </LinearLayout>

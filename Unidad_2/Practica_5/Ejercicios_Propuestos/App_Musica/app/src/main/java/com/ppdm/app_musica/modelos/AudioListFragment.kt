@@ -1,4 +1,4 @@
-package com.ppdm.app_musica.controlador
+package com.ppdm.app_musica.modelos
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ppdm.app_musica.R
-import com.ppdm.app_musica.modelos.Musica
 
 class AudioListFragment : Fragment() {
 
@@ -45,7 +44,7 @@ class AudioListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.audio_list_fragment, container, false)
+        val view = inflater.inflate(R.layout.musica_list_fragment, container, false)
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
