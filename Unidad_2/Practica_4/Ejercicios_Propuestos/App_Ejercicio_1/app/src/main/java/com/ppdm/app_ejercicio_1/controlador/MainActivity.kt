@@ -3,8 +3,8 @@ package com.ppdm.app_ejercicio_1.controlador
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ppdm.app_ejercicio_1.R
-import androidx.navigation.fragment.NavHostFragment
 
+import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import com.ppdm.app_musica.R
@@ -16,9 +17,9 @@ class AudioPlayerFragment : Fragment() {
 
     // Declaracion de Botones, MediaPlayer
     private lateinit var mediaPlayer: MediaPlayer
-    private lateinit var playButton: Button
-    private lateinit var pauseButton: Button
-    private lateinit var stopButton: Button
+    private lateinit var playButton: ImageButton
+    private lateinit var pauseButton: ImageButton
+    private lateinit var stopButton: ImageButton
     private lateinit var backButton: Button
 
     // Método para crear la instancia del fragmento
@@ -74,4 +75,6 @@ class AudioPlayerFragment : Fragment() {
         super.onDestroy()
         mediaPlayer.release()
     }
+
+    
 }
